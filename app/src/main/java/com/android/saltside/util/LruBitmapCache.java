@@ -37,6 +37,8 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements
 
     @Override
     public void putBitmap(String url, Bitmap bitmap) {
-        put(url, bitmap);
+        if (bitmap != null) {
+            put(url, bitmap);
+        }
     }
 }

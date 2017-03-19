@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/five_dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imageView"
+        android:background="@color/grey"
+        android:layout_width="@dimen/image_width"
+        android:scaleType="fitXY"
+        android:layout_height="@dimen/image_height" />
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        tools:text="Title"
+        android:textSize="@dimen/title_text_size"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_marginLeft="@dimen/five_dp"
+        android:layout_marginStart="@dimen/five_dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/descTv"
+        tools:text="Description of each item comes here"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_below="@+id/titleTv"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textSize="@dimen/desc_text_size"
+        android:layout_marginTop="@dimen/five_dp"
+        android:layout_marginLeft="@dimen/five_dp"
+        android:layout_marginStart="@dimen/five_dp"
+        />
+</RelativeLayout>
