@@ -11,14 +11,17 @@
         android:label="@string/app_name"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".module.ListItemsActivity"
-            android:screenOrientation="portrait" android:label="@string/app_name">
+        <activity
+            android:name=".module.ListItemsActivity"
+            android:label="@string/main_activity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".module.DetailsActivity" android:label="@string/details_activity" />
     </application>
 
 </manifest>

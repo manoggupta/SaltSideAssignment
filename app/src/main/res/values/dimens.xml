@@ -5,6 +5,11 @@
     <dimen name="five_dp">5dp</dimen>
     <dimen name="desc_text_size">13sp</dimen>
     <dimen name="title_text_size">15sp</dimen>
-    <dimen name="image_width">75dp</dimen>
-    <dimen name="image_height">75dp</dimen>
+    <dimen name="thumbnail_image_width">75dp</dimen>
+    <dimen name="thumbnail_image_height">75dp</dimen>
+    <dimen name="image_width">200dp</dimen>
+    <dimen name="image_height">200dp</dimen>
+    <dimen name="fifteen_dp">15dp</dimen>
+    <dimen name="twenty_dp">20dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
 </resources>

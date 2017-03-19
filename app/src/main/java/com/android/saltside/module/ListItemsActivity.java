@@ -1,5 +1,6 @@
 package com.android.saltside.module;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +25,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListItemsActivity extends AppCompatActivity implements Response.Listener<JSONArray>, Response.ErrorListener{
+public class ListItemsActivity extends AppCompatActivity implements Response.Listener<JSONArray>, Response.ErrorListener, ListItemAdapter.ItemClickListener{
 
     private static final String BASE_URL = "https://gist.githubusercontent.com/maclir/f715d78b49c3b4b3b77f/raw/8854ab2fe4cbe2a5919cea97d71b714ae5a4838d/items.json";
     private RecyclerView listRecyclerView;
@@ -69,6 +70,19 @@ public class ListItemsActivity extends AppCompatActivity implements Response.Lis
         Gson gson = new Gson();
         Type type = new TypeToken<List<ItemData>>() {}.getType();
         ArrayList<ItemData> dataArrayList = gson.fromJson(response, type);
-        listRecyclerView.setAdapter(new ListItemAdapter(dataArrayList));
+        listRecyclerView.setAdapter(new ListItemAdapter(dataArrayList, this));
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        if(listRecyclerView.getAdapter() instanceof  ListItemAdapter) {
+            ListItemAdapter adapter = (ListItemAdapter) listRecyclerView.getAdapter();
+            ItemData itemData = adapter.getItem(position);
+            Intent intent = new Intent(this, DetailsActivity.class);
+            intent.putExtra("title", itemData.getTitle());
+            intent.putExtra("description", itemData.getDescription());
+            intent.putExtra("image", itemData.getImageUrl());
+            startActivity(intent);
+        }
     }
 }

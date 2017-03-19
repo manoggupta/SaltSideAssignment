@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SaltSideAssignment</string>
+    <string name="main_activity">Home</string>
+    <string name="details_activity">Details</string>
 </resources>
